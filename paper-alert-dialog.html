@@ -22,16 +22,12 @@ Specification: [Material Design](http://www.google.es/design/spec/components/dia
 
 @demo demo/index.html
 -->
-<dom-module id="paper-alert-dialog">
+<dom-module id="komed-alert-dialog">
 
 	<template>
 		<paper-dialog id="dialog" opened="{{opened}}" modal>
 			<h2 hidden$="[[!title]]">[[title]]</h2>
 			<p><slot></slot></p>
-			<div class="buttons">
-				<paper-button dismiss hidden$="[[!dismissButton]]" on-tap="_tapDismiss">[[dismissButton]]</paper-button>
-				<paper-button confirm autofocus on-tap="_tapConfirm">[[confirmButton]]</paper-button>
-			</div>
 		</paper-dialog>
 	</template>
 
@@ -42,19 +38,7 @@ Specification: [Material Design](http://www.google.es/design/spec/components/dia
 (function() {
 
 	PaperAlertDialog = Polymer({
-		is: 'paper-alert-dialog',
-
-		/**
-		 * Fired when the user clicks on the confirm button
-		 *
-		 * @event confirm
-		 */
-
-		/**
-		 * Fired when the user clicks on the dismiss button
-		 *
-		 * @event dismiss
-		 */
+		is: 'komed-alert-dialog',
 
 		properties: {
 			/**
@@ -65,21 +49,6 @@ Specification: [Material Design](http://www.google.es/design/spec/components/dia
 				type: String,
 				value: null
 			},
-
-			/**
-			 * Text of the confirm button
-			 */
-			confirmButton: {
-				type: String,
-				value: 'Confirm'
-			},
-
-			/**
-			 * Text of the dismiss button. The button is not shown if the
-			 * property is empty.
-			 */
-			dismissButton: String,
-
 			/**
 			 * True if the dialog is currently opened
 			 */
@@ -115,19 +84,6 @@ Specification: [Material Design](http://www.google.es/design/spec/components/dia
 			if (this.parentNode) {
 				Polymer.dom(this.parentNode).removeChild(this);
 			}
-		},
-
-		// Private methods
-		_tapDismiss: function() {
-			this.close();
-
-			this.fire('dismiss');
-		},
-
-		_tapConfirm: function() {
-			this.close();
-
-			this.fire('confirm');
 		}
 	});
 
