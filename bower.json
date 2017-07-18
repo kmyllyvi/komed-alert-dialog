@@ -1,10 +1,10 @@
 {
-  "name": "paper-alert-dialog",
+  "name": "komed-alert-dialog",
   "authors": [
-    "collaborne"
+    "komed"
   ],
   "description": "Web component that renders a material design dialog to alert user (Polymer)",
-  "main": "paper-alert-dialog.html",
+  "main": "komed-alert-dialog.html",
   "keywords": [
     "web-components",
     "polymer",
