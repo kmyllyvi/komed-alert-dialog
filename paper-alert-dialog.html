@@ -25,8 +25,8 @@ Specification: [Material Design](http://www.google.es/design/spec/components/dia
 <dom-module id="komed-alert-dialog">
 
 	<template>
-		<paper-dialog id="dialog" opened="{{opened}}" modal>
-			<h2 hidden$="[[!title]]">[[title]]</h2>
+		<paper-dialog id="dialog" opened="{{opened}}" with-backdrop>
+			<h2 hidden$="[[!title]]"><strong>[[title]]</strong></h2>
 			<p><slot></slot></p>
 		</paper-dialog>
 	</template>
